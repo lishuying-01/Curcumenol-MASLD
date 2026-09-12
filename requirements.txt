@@ -1,0 +1,11 @@
+# 运行环境依赖
+# 发布前请在实际环境中执行 `pip freeze` 锁定具体版本号
+rdkit
+scikit-learn
+xgboost
+shap
+pandas
+numpy
+matplotlib
+joblib
+openpyxl
