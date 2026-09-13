@@ -140,7 +140,7 @@ cd train/xgb && python xgboost_model.py         # ⚡ XGBoost
 > 本仓库提供的特征矩阵文件名为 `data/train_data.xlsx`。
 > 运行前请将该文件重命名为 `all_data.xlsx`，或修改脚本中的 `DATA_PATH`。
 
-### 4.3 🔮 预测与 SHAP 分析
+### 4.3 🔮 预测
 
 两个预测脚本均直接加载 `model/` 下已训练模型，读取 `data/predict_data.xlsx`，
 输出每个化合物的 `pred_label`（预测类别）与 `pred_proba`（预测为阳性的概率）。
