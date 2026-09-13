@@ -71,8 +71,7 @@
 │   ├── 🧠 best_random_forest_model.joblib   Pipeline（StandardScaler + RF）
 │   └── 🧠 xgb_best_model.joblib             XGBClassifier
 │
-├── 📁 results/                         运行输出
-└── 📁 shap_plots/                      SHAP 图表（predict_xgb.py 生成）
+└──📁 results/                         运行输出
 ```
 
 ---
