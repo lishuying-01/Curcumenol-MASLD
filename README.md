@@ -147,20 +147,8 @@ cd train/xgb && python xgboost_model.py         # ⚡ XGBoost
 
 ```bash
 python predict_random_forest.py   # → results/rf_predict_result.xlsx
-python predict_xgb.py             # → results/xgb_predict_result.xlsx + SHAP 分析
+python predict_xgb.py             # → results/xgb_predict_result.xlsx 
 ```
-
-`predict_xgb.py` 额外执行 SHAP 可解释性分析（`shap.Explainer(model.predict_proba, X)`，
-二分类取正类 SHAP 值）：
-
-| 输出 | 说明 |
-|:------|:------|
-| `shap_plots/shap_summary_beeswarm.png` 🐝 | SHAP 蜂群图（Top 30 特征） |
-| `shap_plots/shap_summary_bar.png` 📊 | SHAP 全局特征重要性（Top 30） |
-| `shap_plots/shap_force_sample_1.png` 🎯 | 单样本 force plot |
-| `top_morgan_bits_by_shap_xgb.xlsx`（仓库根目录）🔢 | Morgan 指纹位按 SHAP 重要性排名（Top 30） |
-
----
 
 ## 5. 🔬 方法学要点
 
@@ -209,7 +197,6 @@ python predict_xgb.py             # → results/xgb_predict_result.xlsx + SHAP �
 | `results/xgb_roc_curve.png`| `train/xgb/...` | XGB 的 ROC 曲线（论文 Figure 1C ） |
 | `results/rf_predict_result.xlsx` | `predict_random_forest.py` | RF 预测结果（Smiles + pred_label + pred_proba） |
 | `results/xgb_predict_result.xlsx` | `predict_xgb.py` | XGB 预测结果 |
-| `shap_plots/*.png` · `top_morgan_bits_by_shap_xgb.xlsx` | `predict_xgb.py` | SHAP 图表与 Morgan 位重要性 |
 
 ---
 
