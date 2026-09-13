@@ -53,11 +53,4 @@ python xgboost_model.py
 | 文件 | 说明 |
 |------|------|
 | `results/xgb_roc_curve.png` | ROC 曲线（对应论文 Figure 1C） |
-| `results/xgb_pr_curve.png` | PR 曲线（对应论文 Figure 1D） |
 | `model/xgb_best_model.joblib` | 已训练模型（虚拟筛选所用） |
-
-带 bootstrap 95% 置信区间与 Cohen's Kappa 的完整评估，请运行包根目录的
-`evaluate_with_ci.py`（直接加载已训练模型，无需重新训练）。
-
-上游特征工程见包根目录 `data_pre_process.py`（RDKit 计算描述符与
-256 位 Morgan 指纹，与论文 Methods 2.2 一致）。

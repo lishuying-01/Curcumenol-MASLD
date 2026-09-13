@@ -52,14 +52,12 @@
 ├── 📄 LICENSE                          MIT 开源协议
 ├── 📄 requirements.txt                 Python 依赖
 │
-├── 📁 data/                            数据（详见 data/README.md）
-│   ├── 📊 train_data.xlsx              训练特征矩阵（Smiles + label + 13 描述符 + 256 位 Morgan 指纹）
-│   ├── 📊 raw_predict_data.xlsx        待预测化合物（含 Smiles 列）
-│   ├── 📊 predict_data.xlsx            待预测化合物的特征矩阵（data_pre_process.py 生成）
-│   ├── 📊 natural_product_library.xlsx 虚拟筛选的天然产物库
-│   ├── 📁 ampk_activators/             阳性集 positive.xlsx + ChEMBL 原始下载 chembl_activators_raw.csv
-│   ├── 📁 ampk_inhibitors/             阴性集 negative.xlsx + ChEMBL 原始下载 chembl_inhibitors_raw.csv
-│   └── 📄 README.md                    数据来源与特征说明
+├── data/                            数据（详见 data/README.md）
+│   ├── train_data.xlsx              训练特征矩阵（Smiles + label + 13 描述符 + 256 位 Morgan 指纹）
+│   ├── raw_predict_data.xlsx        待预测化合物（含 Smiles 列）
+│   ├── predict_data.xlsx            待预测化合物的特征矩阵（data_pre_process.py 生成）
+│   ├── ampk_activators/             阳性集 positive.xlsx + ChEMBL 原始下载 chembl_activators_raw.csv
+│   ├── ampk_inhibitors/             阴性集 negative.xlsx + ChEMBL 原始下载 chembl_inhibitors_raw.csv
 │
 ├── 🐍 data_pre_process.py              特征生成（RDKit：描述符 + 256 位 Morgan 指纹）
 ├── 🐍 predict_random_forest.py         用已训练 RF 模型预测（输出概率）
@@ -207,8 +205,8 @@ python predict_xgb.py             # → results/xgb_predict_result.xlsx + SHAP �
 | `data/predict_data.xlsx` | `data_pre_process.py` | 预测特征矩阵 |
 | `model/best_random_forest_model.joblib` | `train/rf/model_random_forest.py` | RF 模型 |
 | `model/xgb_best_model.joblib` | `train/xgb/xgboost_model.py` | XGB 模型 |
-| `results/roc_curve_random_forest.png` · `pr_curve_random_forest.png` | `train/rf/...` | RF 的 ROC / PR 曲线（论文 Figure 1A / 1B） |
-| `results/xgb_roc_curve.png` · `xgb_pr_curve.png` | `train/xgb/...` | XGB 的 ROC / PR 曲线（论文 Figure 1C / 1D） |
+| `results/roc_curve_random_forest.png`| `train/rf/...` | RF 的 ROC （论文 Figure 1A ） |
+| `results/xgb_roc_curve.png`| `train/xgb/...` | XGB 的 ROC 曲线（论文 Figure 1C ） |
 | `results/rf_predict_result.xlsx` | `predict_random_forest.py` | RF 预测结果（Smiles + pred_label + pred_proba） |
 | `results/xgb_predict_result.xlsx` | `predict_xgb.py` | XGB 预测结果 |
 | `shap_plots/*.png` · `top_morgan_bits_by_shap_xgb.xlsx` | `predict_xgb.py` | SHAP 图表与 Morgan 位重要性 |

@@ -47,10 +47,8 @@ TRAIN_SIZE = 0.7
 
 # 网格搜索参数空间
 PARAM_GRID = {
-    "rf__n_estimators": [100, 200],
-    "rf__max_depth": [2, 3, 4],
-    "rf__min_samples_split": [10, 20],
-    "rf__min_samples_leaf": [30, 40],
+    "rf__n_estimators": [100, 200, 300],
+    "rf__min_samples_leaf": [1,2,4],
     "rf__max_features": ["sqrt", 0.2],
 }
 

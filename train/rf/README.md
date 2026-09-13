@@ -29,10 +29,8 @@
 
 | 参数 | 候选值 |
 |------|--------|
-| `n_estimators` | 100, 200 |
-| `max_depth` | 2, 3, 4 |
-| `min_samples_split` | 10, 20 |
-| `min_samples_leaf` | 30, 40 |
+| `n_estimators` | 100, 200,300|
+| `min_samples_leaf` | 1,2,4 |
 | `max_features` | sqrt, 0.2 |
 
 最优参数（final selected parameters）在运行时打印。
@@ -50,12 +48,6 @@ python model_random_forest.py
 
 | 文件 | 说明 |
 |------|------|
-| `results/roc_curve_random_forest.png` | ROC 曲线（对应论文 Figure 1A） |
-| `results/pr_curve_random_forest.png` | PR 曲线（对应论文 Figure 1B） |
+| `results/rrandom_forest_roc_curve.png` | ROC 曲线（对应论文 Figure 1A） |
 | `model/best_random_forest_model.joblib` | 最优 Pipeline（Scaler + RF） |
 
-带 bootstrap 95% 置信区间与 Cohen's Kappa 的完整评估，请运行包根目录的
-`evaluate_with_ci.py`（直接加载已训练模型，无需重新训练）。
-
-上游特征工程见包根目录 `data_pre_process.py`（RDKit 计算描述符与
-256 位 Morgan 指纹，与论文 Methods 2.2 一致）。
