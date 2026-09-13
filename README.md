@@ -169,8 +169,7 @@ python predict_xgb.py             # → results/xgb_predict_result.xlsx
 ### 5.3 🎛️ 超参数
 
 - 🌲 **Random Forest**：网格搜索空间见 `train/rf/model_random_forest.py` 的 `PARAM_GRID`
-  （`n_estimators` 100/200、`max_depth` 2/3/4、`min_samples_split` 10/20、
-  `min_samples_leaf` 30/40、`max_features` sqrt/0.2），最优参数在运行时打印。
+  （`n_estimators` 100/200/300、`min_samples_split` 1/2/4、`max_features` sqrt/0.2），最优参数在运行时打印。
 - ⚡ **XGBoost**：固定超参数（见 `train/xgb/xgboost_model.py` 的 `XGB_PARAMS`：
   `n_estimators=3`、`max_depth=4`、`learning_rate=0.05`、`subsample=0.8`、
   `colsample_bytree=0.8`），训练前在训练集上做 5 折交叉验证评估稳定性。
